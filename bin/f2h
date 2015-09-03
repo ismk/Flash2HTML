@@ -1,0 +1,7 @@
+#! /usr/bin/env ruby
+
+require 'f2h'
+
+chatter = F2h::Flash2HTML.new
+
+chatter.main
