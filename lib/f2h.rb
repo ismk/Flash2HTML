@@ -4,12 +4,6 @@ require 'rmagick'
 module F2h
   class Flash2HTML
 
-
-
-
-
-
-
     #===================== BOX BOILERPLATE ==============================
 
     def html_boilerplate(foldername, type)
