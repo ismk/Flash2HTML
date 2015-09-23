@@ -10,8 +10,8 @@ Gem::Specification.new do |spec|
   spec.email         = ["ismailkalimi@gmail.com"]
 
   spec.summary       = %q{Generates boilerplate code for HTML5 creatives from Flash files}
-  spec.description   = %q{This just generates and downloads sane defaults for html5 animations from Flash}
-  spec.homepage      = "https://ikalimi.com/flash2html"
+  spec.description   = %q{Boilerplate code that provides sane default settings when making html5 assets using html,css and js from Flash creatives}
+  spec.homepage      = "https://github.com/ismk/Flash2HTML"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
