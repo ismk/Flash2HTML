@@ -4,7 +4,7 @@ require 'rmagick'
 
 module F2h
   class Flash2HTML
-    @@bp = Boilerplate.new
+    @bp = Boilerplate.new
     def make_files
       make_dirs
       @types.each do |t|
