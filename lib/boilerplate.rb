@@ -5,7 +5,7 @@ module F2h
     #===================== BOX BOILERPLATE ==============================
 
     def html_boilerplate(foldername, type)
-      <<eos
+      <<-eos
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,6 +18,7 @@ module F2h
 </head>
 <body>
 
+  <div id="overall_mask"></div>
 
   <!-- Start-of-the-Image-Tags -->
   <!-- End-of-the-Image-Tags -->
@@ -32,7 +33,7 @@ eos
     end
 
     def box_css_boilerplate
-      <<eos
+      <<-eos
 body{
   position: fixed;
   padding: 0;
@@ -46,7 +47,6 @@ body{
   height: 250px;
   width: 300px;
 }
-
 
 
 
@@ -71,6 +71,20 @@ body{
   width: 20px;
 }
 
+#isi::-webkit-scrollbar-button:vertical:start:increment{
+  display: block;
+  background-image: url();
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#isi::-webkit-scrollbar-button:vertical:end:increment{
+  display: block;
+  background-image: url();
+  background-repeat: no-repeat;
+  background-position: center;
+  }
+
 #isi::-webkit-scrollbar-track {
   background-image: url();
   background-position: center;
@@ -90,17 +104,12 @@ eos
     end
 
     def box_js_boilerplate
-      <<eos
+      <<-eos
 $(function(){
 // WebViewCommunicator.sendJavascriptTo("main", "javascript:appRouter.homeView.flashAdImpressionTrack('box-ad')");
 
   //Start-of-the-animation-code
   //End-of-the-animation-code
-
-
-
-
-
 
 
 
@@ -164,7 +173,7 @@ eos
     ######################## BANNER BOILERPLATE ##########################
 
     def banner_css_boilerplate
-      <<eos
+      <<-eos
 body{
   position: fixed;
   padding: 0;
@@ -178,6 +187,12 @@ body{
   height: 90px;
   width: 728px;
 }
+
+
+
+
+
+
 
   /* Start-of-the-ISI */
 #isi{
@@ -200,6 +215,20 @@ body{
   margin-top: 10px
 }
 
+#isi::-webkit-scrollbar-button:vertical:start:increment{
+  display: block;
+  background-image: url();
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#isi::-webkit-scrollbar-button:vertical:end:increment{
+  display: block;
+  background-image: url();
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 #isi::-webkit-scrollbar-track {
   background-image: url();
   background-position: center;
@@ -219,20 +248,12 @@ eos
     end
 
     def banner_js_boilerplate
-      <<eos
+      <<-eos
 $(function(){
 // WebViewCommunicator.sendJavascriptTo("main", "javascript:appRouter.homeView.flashAdImpressionTrack('banner-ad')");
 
   //Start-of-the-animation-code
   //End-of-the-animation-code
-
-
-
-
-
-
-
-
 
 
 
@@ -281,7 +302,7 @@ eos
     end
 
     def pdf_html
-      <<eos
+      <<-eos
 <!doctype html>
 <html>
   <head>
@@ -307,13 +328,13 @@ eos
     #==================================================
 
     def img_html(filename, loc)
-      <<eos
+      <<-eos
 <img id="#{filename}" src="#{loc}_images/#{filename}.png" alt="">
 eos
     end
 
     def img_css(filename)
-      <<eos
+      <<-eos
 
 ##{filename}{
   position: absolute;
@@ -325,11 +346,10 @@ eos
     end
 
     def img_js(filename)
-      <<eos
+      <<-eos
 TweenMax.to(#{filename}, 0.0, {});
 eos
     end
 
   end
-
 end
