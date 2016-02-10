@@ -6,8 +6,8 @@ module F2h
 
     def do_the_pdf(pdfs_to_html)
       p pdfs_to_html
-      html_pdf_imgs = []
       pdfs_to_html.each do |file|
+      html_pdf_imgs = []
         if file.include? " "
           File.rename(file, file.gsub(" ","_"))
           file = file.gsub(" ","_")
@@ -22,14 +22,15 @@ module F2h
           html_pdf_imgs <<  img_tag.join
           img.write(pdf_folder_name+"/#{pdf_folder_name}_#{idx}.png") { self.quality = 100}
         end
-        temp = @bp.pdf_html
-        temp = temp.split(/(<body>)/)
-        temp.insert(2,html_pdf_imgs.join("\n"))
-        temp = temp.join
-        puts temp
+        pdf_blob = @bp.pdf_html
+        pdf_blob = pdf_blob.split(/(<body>)/)
+        pdf_blob.insert(2,html_pdf_imgs.join("\n"))
+        pdf_blob = pdf_blob.join
+        puts pdf_blob
         File.open(pdf_folder_name+".html", "w+") do |f|
-          f.write(temp)
+          f.write(pdf_blob)
         end
+        pdf_blob = ""
       end
     end
   end
