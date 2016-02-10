@@ -24,6 +24,8 @@ module F2h
       case opts[0]
       when "new"
         @init.make_files
+      when "wallboard"
+        @init.make_wallboard_files
       when "g", "generate"
         case opts[1]
         when "img"
@@ -70,18 +72,18 @@ module F2h
     def help
       <<-eos
       Flags are:
-          -new
-            : Which Generates html,css and js files for Box and Banners
-            : Also downloads the current verison of jQuery and TweenMax
+        -new
+      : Which Generates html,css and js files for Box and Banners
+      : Also downloads the current verison of jQuery and TweenMax
 
-          -g or genrate
-            : The Generate Flag is to be used in conjunction with either
-              -img
-                :Generates tags in html, css and js
+      -g or genrate
+      : The Generate Flag is to be used in conjunction with either
+      -img
+      :Generates tags in html, css and js
 
-              -pdf
-                :Extracts imgages from the source PDF passed in as args
-                 Creates a Folder and html file with all the images as tags
+      -pdf
+      :Extracts imgages from the source PDF passed in as args
+      Creates a Folder and html file with all the images as tags
       eos
     end
 
